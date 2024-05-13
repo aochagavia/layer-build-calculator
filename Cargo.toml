@@ -1,5 +1,5 @@
 [package]
-name = "containerd-layer-limit"
+name = "layer-limit-calculator"
 version = "0.1.0"
 edition = "2021"
 
