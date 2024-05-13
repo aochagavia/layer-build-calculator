@@ -1,0 +1,10 @@
+# Includes 2 layers, according to the Docker UI
+FROM alpine:3.19.1
+
+# Each COPY adds a layer to the container
+{% for i in range(end=file_count) -%}
+  COPY Dockerfile dummy-files/{{i + 1}}
+{% endfor %}
+
+# This allows us to check whether running the container actually works
+ENTRYPOINT ["ls", "dummy-files"]
